@@ -1326,7 +1326,5 @@ footer {
 }
 
 footer span a {
-  text-shadow: 0 0 3px black;
-  color: #fff;
-  text-decoration: underline 1px blue;
+  color: blue;
 }

@@ -128,7 +128,7 @@ function Skills() {
   let windowHeight = this.innerHeight;
   let windowScrollTop = this.pageYOffset;
 
-  if (windowScrollTop > SkillsOffSetTop + SkillsOuterHeight - windowHeight) {
+  if (windowScrollTop + 150 > SkillsOffSetTop + SkillsOuterHeight - windowHeight) {
     let AllSkills_Span = document.querySelectorAll(
       ".skills .skill-box .skill-progress span"
     );
