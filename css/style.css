@@ -294,47 +294,48 @@ body {
 
 .link-container {
   width: 100%;
+  position: initial;
+  z-index: -1;
 }
 
-.link-container .toggel-menu {
-  width: 30px;
-  height: 20px;
-  background: transparent;
-  /* background: #000; */
-  border: none;
-  display: none;
-  cursor: pointer;
+
+#toggle {
+  width: 25px;
+  height: 25px;
+  color: #fff;
+  font-size: 26px;
   position: relative;
-  float: right;
+  left: 90%;
 }
 
-.link-container .toggel-menu:hover span {
-  width: 100%;
-}
-
-.link-container .toggel-menu span {
-  width: 60%;
-  height: 3px;
-  background: var(--main-color);
+#bars,
+#xmark {
+  transition: .2s;
+  cursor: pointer;
   position: absolute;
-  border-radius: 25px;
-  transition: 0.2s all linear;
+  top: calc(50% - 12.5);
+  left: calc(50% - 12.5);
 }
 
-.toggel-menu span:nth-child(1) {
-  top: 0;
-  right: 0;
+#bars {
+  transform: scale(0);
 }
 
-.toggel-menu span:nth-child(2) {
-  left: 50%;
-  transform: translate(-50%, -50%);
+#bars.rotate {
+  transform: scale(1);
 }
 
-.toggel-menu span:nth-child(3) {
-  bottom: 0;
-  left: 0;
+#xmark {
+  color: #f00;
+  font-size: 25px;
+  transform: scale(0);
 }
+
+#xmark.rotate {
+  transform: scale(1);
+}
+
+/* ==================================== */
 
 .header-area .links {
   list-style: none;
@@ -377,24 +378,22 @@ body {
 }
 
 @media (max-width: 768px) {
-  .link-container .toggel-menu {
-    display: block;
-  }
-
   .header-area .links {
+    width: 100%;
+    height: 0;
     text-align: center;
-    background: #00000050;
     position: absolute;
     right: 0;
-    top: 55px;
-
-    opacity: 0;
-    transform: translate(-200px, 100px);
+    top: 0;
+    padding-top: 55px;
+    z-index: -1;
+    overflow: hidden;
   }
 
   .header-area .links.show {
-    opacity: 1;
-    transform: translate(0, 0);
+    height: 360px;
+    background: #000000d1;
+
   }
 
   .header-area .links li {
@@ -409,28 +408,11 @@ body {
   }
 
   .header-area .links li:hover {
-    background: #00000080;
+    background: #ffffff50;
   }
 
   .header-area .links li:hover a {
-    transform: translate(7px, -5px);
-  }
-}
-
-@media (max-width: 768px) {
-  .link-container .toggel-menu {
-    width: 25px;
-    height: 20px;
-  }
-
-  .header-area .links {
-    width: 100%;
-    background: #00000090;
-    left: 0;
-  }
-
-  .header-area .links li:hover {
-    background: #000000;
+    transform: translate(5px, -5px);
   }
 }
 
@@ -473,9 +455,8 @@ body {
   }
 }
 
-/* End Landing */
-
 /* Start About Us */
+
 .about-us {
   padding: 10px 0;
 }
@@ -777,6 +758,7 @@ body {
 }
 
 .popup-box {
+  width: 80%;
   display: block;
   margin: auto;
   background: #fff;

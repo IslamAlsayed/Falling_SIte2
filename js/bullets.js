@@ -17,6 +17,7 @@ if (bulletsLocalItem === "flex") {
 
 bulletsSpan.forEach((span) => {
   span.addEventListener("click", (ele) => {
+    ele.style.background = "red";
     if (span.dataset.display === "yes") {
       bulletscontainer.style.display = "flex";
       localStorage.setItem("bullets-option", "flex");
