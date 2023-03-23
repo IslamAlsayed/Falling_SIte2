@@ -6,52 +6,6 @@ let ColorLi = document.querySelectorAll(".colors-list li");
 
 let MainColor = localStorage.getItem("Color-List");
 
-// open And Close List Links By Toggel Menu
-// ToggelMenu.addEventListener("click", function (e) {
-//   if (e.target === ToggelMenu) {
-
-//   }
-// });
-
-// Close List Links By click AnyWay
-// document.addEventListener("click", (e) => {
-//   if (e.target !== ToggelMenu) {
-//     if (ListLinks.classList.contains("show")) {
-//       ListLinks.classList.remove("show");
-//     }
-//   }
-// });
-
-let toggle = document.getElementById("toggle");
-let bars = document.getElementById("bars");
-let xmark = document.getElementById("xmark");
-let ListLinks = document.querySelector(".links");
-let logo = document.querySelector(".logo");
-
-bars.addEventListener("click", () => {
-  bars.classList.remove("rotate");
-  xmark.classList.add("rotate");
-  ListLinks.classList.add("show");
-});
-xmark.addEventListener("click", () => {
-  xmark.classList.remove("rotate");
-  bars.classList.add("rotate");
-  ListLinks.classList.remove("show");
-});
-
-document.addEventListener("click", (e) => {
-  if (
-    e.target != xmark &&
-    e.target != bars &&
-    e.target != ListLinks &&
-    e.target != logo
-  ) {
-    xmark.classList.remove("rotate");
-    bars.classList.add("rotate");
-    ListLinks.classList.remove("show");
-  }
-});
-
 // Open Setting By Gear
 OpenSetting.addEventListener("click", function () {
   Gear.classList.toggle("fa-spin");
@@ -128,7 +82,7 @@ function Skills() {
   let windowHeight = this.innerHeight;
   let windowScrollTop = this.pageYOffset;
 
-  if (windowScrollTop + 150 > SkillsOffSetTop + SkillsOuterHeight - windowHeight) {
+  if (windowScrollTop > SkillsOffSetTop + SkillsOuterHeight - windowHeight) {
     let AllSkills_Span = document.querySelectorAll(
       ".skills .skill-box .skill-progress span"
     );
@@ -166,6 +120,24 @@ OurGallery.forEach((img) => {
     PopupBox.appendChild(popupImage);
     document.body.appendChild(PopupBox);
   });
+});
+
+// open And Close List Links By Toggel Menu
+let ListLinks = document.querySelector(".links");
+let ToggelMenu = document.querySelector(".toggel-menu");
+ToggelMenu.addEventListener("click", function (e) {
+  if (e.target === ToggelMenu) {
+    ListLinks.classList.toggle("show");
+  }
+});
+
+// Close List Links By click AnyWay
+document.addEventListener("click", (e) => {
+  if (e.target !== ToggelMenu) {
+    if (ListLinks.classList.contains("show")) {
+      ListLinks.classList.remove("show");
+    }
+  }
 });
 
 // ClosePopup
