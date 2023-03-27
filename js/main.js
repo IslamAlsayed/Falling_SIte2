@@ -124,7 +124,7 @@ OurGallery.forEach((img) => {
 
 // open And Close List Links By Toggel Menu
 let ListLinks = document.querySelector(".links");
-let ToggelMenu = document.querySelector(".toggel-menu");
+let ToggelMenu = document.querySelector(".toggle-menu");
 ToggelMenu.addEventListener("click", function (e) {
   if (e.target === ToggelMenu) {
     ListLinks.classList.toggle("show");

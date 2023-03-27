@@ -296,11 +296,10 @@ body {
   width: 100%;
 }
 
-.link-container .toggel-menu {
+.link-container .toggle-menu {
   width: 30px;
   height: 20px;
   background: transparent;
-  /* background: #000; */
   border: none;
   display: none;
   cursor: pointer;
@@ -308,11 +307,11 @@ body {
   float: right;
 }
 
-.link-container .toggel-menu:hover span {
+.link-container .toggle-menu:hover span {
   width: 100%;
 }
 
-.link-container .toggel-menu span {
+.link-container .toggle-menu span {
   width: 60%;
   height: 3px;
   background: var(--main-color);
@@ -321,17 +320,17 @@ body {
   transition: 0.2s all linear;
 }
 
-.toggel-menu span:nth-child(1) {
+.toggle-menu span:nth-child(1) {
   top: 0;
   right: 0;
 }
 
-.toggel-menu span:nth-child(2) {
+.toggle-menu span:nth-child(2) {
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.toggel-menu span:nth-child(3) {
+.toggle-menu span:nth-child(3) {
   bottom: 0;
   left: 0;
 }
@@ -377,7 +376,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .link-container .toggel-menu {
+  .link-container .toggle-menu {
     display: block;
   }
 
@@ -418,7 +417,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .link-container .toggel-menu {
+  .link-container .toggle-menu {
     width: 25px;
     height: 20px;
   }
